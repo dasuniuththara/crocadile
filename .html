@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Crocodile Facts</h1>
+        <button id="generateFactBtn">Generate Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles are large aquatic reptiles that live throughout the tropics in Africa, Asia, the Americas, and Australia.",
+            "They are members of the order Crocodylia, which also includes alligators, caimans, and gharials.",
+            "Crocodiles have a V-shaped snout, while alligators have a U-shaped snout.",
+            "They are carnivorous and have a powerful bite, capable of crushing bones.",
+            "Crocodiles can live both in freshwater and saltwater environments.",
+            "They have a lifespan of about 70 to 100 years in the wild.",
+            "Crocodiles are excellent swimmers and can hold their breath underwater for up to an hour.",
+            "They have a unique heart structure with four chambers, similar to birds and mammals.",
+            "Crocodiles communicate with each other through vocalizations, such as growls and hisses.",
+            "They are known for their ambush hunting technique, where they wait for prey to come close before attacking."
+        ];
+
+        document.getElementById('generateFactBtn').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('factDisplay').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
